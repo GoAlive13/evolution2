@@ -1,0 +1,14 @@
+{
+  "houses": [
+    {
+      "name": "GOLIVI SAITEJA",
+      "ownerName": "teja",
+      "address": "Desavanipeta street, NARASANNAPETA post, Narasannapeta,",
+      "areaCode": "532421",
+      "rent": "5600",
+      "preferred_tenants": "",
+      "preferredTenant": "on",
+      "id": 1
+    }
+  ]
+}
