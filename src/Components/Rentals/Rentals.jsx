@@ -1,6 +1,10 @@
+// import { useState } from "react";
 import "./Rentals.css";
 
+import data from "../../../db.json";
+
 export const Rentals = () => {
+  // const [house, setHouse] = useState(data.houses);
   return (
     <div className="rentalContainer">
       <div className="sortingButtons">
@@ -29,20 +33,21 @@ export const Rentals = () => {
           </tr>
         </thead>
         <tbody>
-          {[].map((houses, index) => {
+          {data.houses.map((house, index) => {
             return (
-              <tr key={houses.id} className="houseDetails">
-                <td className="houseId">{houses.id}</td>
-                <td className="houseName">{houses.name} </td>
-                <td className="ownersName">{houses.ownerName}</td>
-                <td className="address">{houses.address}</td>
-                <td className="areaCode">{houses.areaCode}</td>
-                <td className="rent">{houses.rent}</td>
+              <tr key={house.id} className="houseDetails">
+                <td className="houseId">{house.id}</td>
+                <td className="houseName">{house.name} </td>
+                <td className="ownersName">{house.ownerName}</td>
+                <td className="address">{house.address}</td>
+                <td className="areaCode">{house.areaCode}</td>
+                <td className="rent">{house.rent}</td>
                 <td className="preferredTenants">
-                  {/* Show text Both or Bachelors or Married based on values */}
+                  {/* Show text Both or Bachelors or Married based on values */ house.preferred_tenants}
+
                 </td>
                 <td className="houseImage">
-                  <img src={houses.image} alt="house" />
+                  <img src={house.image} alt="house" />
                 </td>
               </tr>
             );
