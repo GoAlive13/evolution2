@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { useEffect } from "react/cjs/react.production.min";
 
 export const AddHouse = () => {
   const [formData, setFormdata] = useState({
@@ -24,6 +25,10 @@ export const AddHouse = () => {
       setFormdata({ ...formData, [id]: value });
     }
   }
+  useEffect(() => {
+    getData();
+  });
+
 
   const handlesubmit = (e) => {
     e.preventDefault();
@@ -33,7 +38,12 @@ export const AddHouse = () => {
     });
   }
 
-
+  const getData = () => {
+    axios.get("http://localhost:8080/houses").then((res) => {
+      setdatabaseData(res.data);
+     
+  })
+}
 
 
   return (
