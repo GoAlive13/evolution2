@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
-import { useEffect } from "react/cjs/react.production.min";
+import { useEffect } from "react";
+import { Rentals } from "../Rentals/Rentals";
 
 export const AddHouse = () => {
   const [formData, setFormdata] = useState({
@@ -41,7 +42,6 @@ export const AddHouse = () => {
   const getData = () => {
     axios.get("http://localhost:8080/houses").then((res) => {
       setdatabaseData(res.data);
-     
   })
 }
 
