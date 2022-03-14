@@ -1,12 +1,24 @@
-// import { useState } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import "./Rentals.css";
 
-import data1 from "../../../db.json";
-import { useState } from "react";
+import axios from "axios";
 
 export const Rentals = () => {
-  const list = data1.houses;
-  const [data, showData] = useState(list);
+
+  const [data, showData] = useState([]);
+  // const list = data1.houses;
+  useEffect(() => {
+    getData();
+  },[]);
+
+  const getData = () => {
+    axios.get("http://localhost:8080/houses").then((res) => {
+      showData(res.data);
+  })
+}
+
+  // const [data, showData] = useState(list);
 
 
   const Id=()=>{
@@ -61,7 +73,7 @@ export const Rentals = () => {
           </tr>
         </thead>
         <tbody>
-          {data1.houses.map((houses, index) => {
+          {data.map((houses, index) => {
             return (
               <tr key={houses.id} className="houseDetails">
                 <td className="houseId">{houses.id}</td>

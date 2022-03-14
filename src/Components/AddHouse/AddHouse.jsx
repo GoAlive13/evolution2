@@ -13,7 +13,7 @@ export const AddHouse = () => {
     preferred_tenants: "",
   });
 
-  const [getdatabaseData, setdatabaseData] = useState([]);
+  
 
   const handlechange = (e) => {
     const preferred_tenants = e.target.id === "married" && e.target.checked === true ? "married" : "bachelor";
@@ -26,9 +26,7 @@ export const AddHouse = () => {
       setFormdata({ ...formData, [id]: value });
     }
   }
-  useEffect(() => {
-    getData();
-  },[]);
+  
 
 
   const handlesubmit = (e) => {
@@ -39,12 +37,7 @@ export const AddHouse = () => {
     });
   }
 
-  const getData = () => {
-    axios.get("http://localhost:8080/houses").then((res) => {
-      setdatabaseData(res.data);
-  })
-}
-
+  
 
   return (
     <div className="addHouseContainer">
