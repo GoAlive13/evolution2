@@ -8,6 +8,24 @@
       "rent": "5600",
       "preferred_tenants": "bachelor",
       "id": 1
+    },
+    {
+      "name": "saiteja",
+      "ownerName": "teja",
+      "address": "Desavanipeta street, NARASANNAPETA post, Narasannapeta,",
+      "areaCode": "542",
+      "rent": "1002",
+      "preferred_tenants": "bachelor",
+      "id": 2
+    },
+    {
+      "name": "bhargav",
+      "ownerName": "teja",
+      "address": "seetanagaram,chamarakhandi,vizianagaram,",
+      "areaCode": "54245",
+      "rent": "10000",
+      "preferred_tenants": "married",
+      "id": 3
     }
   ]
 }
